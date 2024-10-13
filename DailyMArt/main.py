@@ -9,8 +9,6 @@ client = MongoClient(f"mongodb+srv://host:host@cluster0.pjpf7.mongodb.net/shop_d
 db= client.shop_db
 collection = db["Products"]
 
-mock_data=[{"name":"High_fat","price":"6.99","expiry":"23/12","category":"milk","image_path":"/static/images/milk.jpg"}]
-collection.insert_many(mock_data)
 
 
 @main.route('/')
@@ -19,8 +17,8 @@ def home():
 
 @main.route('/product')
 def products():
-    products =list(collection.find())
-    return render_template("/product.html",product_obj=products)
+    temp =list(collection.find())
+    return render_template("/product.html",products=temp)
 
 if __name__ == '__main__':
     main.run(debug=True)
