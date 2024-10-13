@@ -15,12 +15,12 @@
             </tr>
         </thead>
         <tbody>
-            {% for Products in product %}
+            {% for products in product %}
             <tr>
-                <td>{{ Products.name }}</td>
-                <td>{{ Products.expiry }}</td>
-                <td>${{ Products.price }}</td>
-                <td><img src="{{ url_for('static', filename=Products.image_path) }}" alt="{{ Products.name }}" width="100"></td>
+                <td>{{ products.name }}</td>
+                <td>{{ products.expiry }}</td>
+                <td>${{ products.price }}</td>
+                <td><img src="{{ product.image_path }}" width="100"></td>
             </tr>
             {% endfor %}
         </tbody>
