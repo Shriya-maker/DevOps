@@ -16,10 +16,7 @@ client = MongoClient(f"mongodb+srv://{MONGODB_USERNAME}:{MONGODB_PASSWORD}@clust
 db = client.shop_db
 collection = db["Products"]
 
-# Replace hardcoded MongoDB URI with the one built using environment variables
-# client = MongoClient(f"mongodb+srv://{MONGODB_USERNAME}:{MONGODB_PASSWORD}@{MONGODB_HOST}/{MONGODB_DB}?retryWrites=true&w=majority")
-# db = client[MONGODB_DB]
-# collection = db["Products"]
+
 
 # Mock data for the Products collection
 mock_data = [{"name": "High_fat", "price": "6.99", "expiry": "23/12", "category": "milk", "image_path": "/static/images/milk.jpg"}]
